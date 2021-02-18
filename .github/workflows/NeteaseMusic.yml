@@ -7,15 +7,15 @@ on:
   workflow_dispatch:
   schedule:
     - cron: 0 22,14 * * *
-
 jobs:
-  NeteaseMusic:
+  Sign:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
+    timeout-minutes: 5
 
     steps:
-    - name: 导入仓库代码 
-      uses: actions/checkout@v2
+    - name: 导入仓库代码
+      uses: actions/checkout@master
 
     - name: 初始化运行环境
       uses: actions/setup-python@v2
