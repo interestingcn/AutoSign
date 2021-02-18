@@ -2,15 +2,16 @@
 # Auto Sign
 # Version：1.00
 #=================================================
-name: NeteaseMusic
+
+name: Netease Music
 on:
   workflow_dispatch:
-  schedule:
-    - cron: 0 22,14 * * *
+  # schedule:
+  #   - cron: 0 22,14 * * *
+
 jobs:
   Sign:
     runs-on: ubuntu-latest
-    if: github.event.repository.owner.id == github.event.sender.id
     timeout-minutes: 5
 
     steps:
