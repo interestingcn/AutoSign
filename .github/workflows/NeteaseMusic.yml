@@ -7,7 +7,7 @@ name: Netease Music
 on:
   workflow_dispatch:
   schedule:
-    - cron: 23,52 0-3 * * *
+    - cron: 52 0-1 * * *
 
 jobs:
   Sign:
