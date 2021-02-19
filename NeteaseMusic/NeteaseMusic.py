@@ -1,5 +1,6 @@
 import requests,base64,json,hashlib
 from Crypto.Cipher import AES
+import random
 msg = '''
 ===========================================================
 d8b   db d88888b d888888b d88888b  .d8b.  .d8888. d88888b 
@@ -96,6 +97,7 @@ for x in object['recommend']:
     object=json.loads(res.text,strict=False)
     buffer=[]
     count=0
+    endcount=random.randint(320,400)
     for j in object['playlist']['trackIds']:
         data2={}
         data2["action"]="play"
@@ -104,14 +106,14 @@ for x in object['recommend']:
         data2["json"]["end"]="playend"
         data2["json"]["id"]=j["id"]
         data2["json"]["sourceId"]=""
-        data2["json"]["time"]="240"
+        data2["json"]["time"]=random.randint(200,320)
         data2["json"]["type"]="song"
         data2["json"]["wifi"]=0
         buffer.append(data2)
         count+=1
-        if count>=310:
+        if count>=endcount:
             break
-    if count>=310:
+    if count>=endcount:
         break
 url = "http://music.163.com/weapi/feedback/weblog"
 postdata={
