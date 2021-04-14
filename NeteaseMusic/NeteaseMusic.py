@@ -97,7 +97,7 @@ for x in object['recommend']:
     object=json.loads(res.text,strict=False)
     buffer=[]
     count=0
-    endcount=random.randint(320,400)
+    endcount=random.randint(1,2)
     for j in object['playlist']['trackIds']:
         data2={}
         data2["action"]="play"
